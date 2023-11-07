@@ -1,0 +1,111 @@
+// lear
+// Digital Clock
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+// Colors
+$backgroundColor: linear-gradient(-45deg, #08080f, #30206d);
+$secondBackgroundColor: rgba(225, 0, 255, 0.1);
+$white: #fff;
+$darkPink: rgb(255, 80, 120);
+$lightBlue: rgb(80, 120, 255);
+
+body {
+  background: $backgroundColor;
+  color: $white;
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  overflow: hidden;
+}
+
+// Main Container
+.main {
+  width: min(750px, 90vw);
+  background-color: $secondBackgroundColor;
+  position: relative;
+  border-radius: 0.25rem;
+  -webkit-border-radius: 0.25rem;
+  -moz-border-radius: 0.25rem;
+  -ms-border-radius: 0.25rem;
+  -o-border-radius: 0.25rem;
+
+  &::before {
+    content: "";
+    width: 150px;
+    height: 150px;
+    background-color: $darkPink;
+    border-radius: 0.25rem;
+    -webkit-border-radius: 0.25rem;
+    -moz-border-radius: 0.25rem;
+    -ms-border-radius: 0.25rem;
+    -o-border-radius: 0.25rem;
+    position: absolute;
+    top: -75px;
+    left: -75px;
+  }
+
+  &::after {
+    content: "";
+    width: 150px;
+    height: 150px;
+    background-color: $lightBlue;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    position: absolute;
+    bottom: -75px;
+    right: -75px;
+    z-index: -1;
+  }
+
+  .layer {
+    padding: 3rem 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5vw;
+    backdrop-filter: blur(1rem);
+    border-radius: 0.25rem;
+    -webkit-border-radius: 0.25rem;
+    -moz-border-radius: 0.25rem;
+    -ms-border-radius: 0.25rem;
+    -o-border-radius: 0.25rem;
+
+    .odd {
+      font-size: 3rem;
+    }
+
+    .box {
+      text-align: center;
+      min-width: 50px;
+
+      .time {
+        font-size: 3rem;
+        font-weight: 500;
+      }
+
+      .name {
+        font-weight: 400;
+        font-size: 1rem;
+        padding-top: 0.5rem;
+      }
+    }
+  }
+}
+
+// For Smaller Devices
+@media screen and (max-width: 448px) {
+  .layer {
+    flex-direction: column;
+  }
+}
