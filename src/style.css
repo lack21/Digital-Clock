@@ -86,8 +86,11 @@ body {
   padding-top: 0.5rem;
 }
 
-@media screen and (max-width: 448px) {
-  .layer {
+@media screen and (max-width: 468px) {
+  .main {
+    overflow: hidden;
+  }
+  .main .layer {
     flex-direction: column;
   }
 }/*# sourceMappingURL=style.css.map */

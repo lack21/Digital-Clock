@@ -104,8 +104,12 @@ body {
 }
 
 // For Smaller Devices
-@media screen and (max-width: 448px) {
-  .layer {
-    flex-direction: column;
+@media screen and (max-width: 468px) {
+  .main {
+    overflow: hidden;
+
+    .layer {
+      flex-direction: column;
+    }
   }
 }
